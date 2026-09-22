@@ -7,7 +7,7 @@ import './ServicesPage.css'
 import ImageUpload from '../components/ImageUpload'
 import ProviderMap from '../components/ProviderMap'
 import SuggestServiceForm from '../components/SuggestServiceForm'
-import CustomerConversations from '../components/CustomerConversations'
+
 import LocationPicker, { type Location } from '../components/LocationPicker'
 
 type RequestRow = {
@@ -28,8 +28,7 @@ export default function ServicesPage() {
   const [submitting, setSubmitting] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [success, setSuccess] = useState<string | null>(null)
-  const [requests, setRequests] = useState<RequestRow[]>([])
-
+const [, setRequests] = useState<RequestRow[]>([])
   const [photoUrls, setPhotoUrls] = useState<string[]>([])
 
   // remove: import { geocodeAddress } from '../lib/geo'  (no longer used directly here)
