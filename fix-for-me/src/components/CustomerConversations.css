@@ -1,0 +1,91 @@
+
+/* Embed ConversationThread in the pane instead of a modal */
+.msgs.has-open .msgs-thread > :last-child {
+  position: static !important;
+  inset: auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  flex: 1 !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  backdrop-filter: none !important;
+  animation: none !important;
+  overflow: hidden !important;
+}
+
+/* the panel */
+.msgs.has-open .msgs-thread > :last-child > * {
+  position: static !important;
+  display: flex !important;
+  flex-direction: column !important;
+  flex: 1 !important;
+  min-height: 0 !important;
+  width: 100% !important;
+  max-width: none !important;
+  height: auto !important;
+  max-height: none !important;
+  margin: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  transform: none !important;
+  animation: none !important;
+}
+
+/* hide its own Conversation header the pane header replaces it */
+/* .msgs.has-open .msgs-thread > :last-child > * > :first-child { display: none !important; } */
+
+/* message list scrolls, input row stays pinned at the bottom */
+.msgs.has-open .msgs-thread > :last-child > * > :nth-child(2) { flex: 1; min-height: 0; overflow-y: auto; }
+.msgs { display: grid; grid-template-columns: 320px 1fr; height: calc(100dvh - 210px); min-height: 480px; background: #fff; border: 1px solid #e4e5e7; border-radius: 12px; overflow: hidden; }
+
+.msgs-list { display: flex; flex-direction: column; min-width: 0; border-right: 1px solid #e4e5e7; }
+.msgs-list-head { padding: 16px 20px; border-bottom: 1px solid #e4e5e7; font-weight: 700; }
+.msgs-list ul { margin: 0; padding: 0; list-style: none; overflow-y: auto; }
+
+.msgs-item { display: flex; align-items: center; gap: 12px; width: 100%; padding: 14px 20px; border: 0; border-bottom: 1px solid #f0f0f1; border-left: 3px solid transparent; background: #fff; font: inherit; text-align: left; cursor: pointer; transition: background .15s; }
+.msgs-item:hover { background: #f7f8f9; }
+.msgs-item:focus-visible { outline: 2px solid var(--accent, #1dbf73); outline-offset: -2px; }
+.msgs-item.active { background: #f0faf5; border-left-color: var(--accent, #1dbf73); }
+
+.msgs-avatar { flex: none; display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: #222; color: #fff; font-weight: 700; }
+.msgs-item.active .msgs-avatar { background: var(--accent, #1dbf73); }
+
+.msgs-item-text { display: flex; flex: 1; flex-direction: column; min-width: 0; }
+.msgs-item-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-weight: 600; color: #222; }
+.msgs-item-service { font-size: 13px; color: #74767e; }
+
+.msgs-item-chevron { flex: none; font-size: 22px; line-height: 1; color: #b5b6ba; transition: transform .15s, color .15s; }
+.msgs-item:hover .msgs-item-chevron { color: #222; transform: translateX(2px); }
+
+.msgs-thread { display: flex; flex-direction: column; min-width: 0; }
+.msgs-thread > :last-child { flex: 1; min-height: 0; overflow-y: auto; }
+
+.msgs-placeholder { display: grid; place-content: center; gap: 4px; padding: 32px; text-align: center; color: #74767e; }
+.msgs-placeholder strong { color: #222; }
+
+.msgs-status { padding: 48px 16px; text-align: center; color: #62646a; }
+.msgs-empty { padding: 64px 24px; text-align: center; background: #fff; border: 1px solid #e4e5e7; border-radius: 12px; color: #62646a; }
+.msgs-empty h2 { margin: 0 0 6px; color: #222; font-size: 18px; }
+.msgs-empty p { margin: 0; }
+
+.msgs-item-when { flex: none; font-size: 12px; color: #74767e; }
+
+.msgs-thread-head { display: flex; align-items: center; gap: 12px; padding: 12px 20px; border-bottom: 1px solid #e4e5e7; background: #fff; }
+.msgs-back { display: none; place-items: center; width: 36px; height: 36px; margin-left: -8px; border: 0; border-radius: 50%; background: none; font-size: 28px; line-height: 1; color: #222; cursor: pointer; }
+.msgs-back:hover { background: #f0f0f1; }
+
+/* Email style: wide screens */
+@media (min-width: 721px) { .msgs-item-chevron { display: none; } }
+@media (min-width: 1100px) { .msgs { grid-template-columns: 380px 1fr; } }
+
+/* WhatsApp style: phones */
+@media (max-width: 720px) {
+  .msgs { display: block; height: auto; min-height: 0; border: 0; border-radius: 0; background: transparent; }
+  .msgs-list { border: 1px solid #e4e5e7; border-radius: 12px; background: #fff; }
+  .msgs.has-open .msgs-list { display: none; }
+  .msgs-thread { display: none; }
+  .msgs.has-open .msgs-thread { display: flex; position: fixed; top: 64px; right: 0; bottom: 0; left: 0; z-index: 40; background: #fff; }
+  .msgs-back { display: grid; }
+}

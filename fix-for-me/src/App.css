@@ -1,0 +1,141 @@
+/* src/App.css */
+.app-loading {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: #F4F3EE;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 14px;
+  color: #6B6D5F;
+}
+
+.app-shell {
+  min-height: 100vh;
+  background: #F4F3EE;
+  font-family: 'Inter', system-ui, sans-serif;
+  color: #1B2430;
+}
+
+/* ---------- Top nav ---------- */
+.app-nav {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding: 12px 32px;
+  background: #12253E;
+  color: #EAF3F5;
+  border-bottom: 3px solid #E3922B;
+}
+
+.app-nav-mark {
+  font-family: 'Roboto Slab', serif;
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: 0.01em;
+}
+
+.app-nav-links {
+  display: flex;
+  gap: 4px;
+  margin-right: auto;
+}
+
+.app-nav-links button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  color: #9FB6C0;
+  padding: 8px 14px;
+  border-radius: 4px;
+  transition: color 0.15s ease, background 0.15s ease;
+}
+
+.app-nav-links button:hover {
+  color: #EAF3F5;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.app-nav-links button.active {
+  color: #EAF3F5;
+  background: rgba(227, 146, 43, 0.16);
+}
+
+.app-nav-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+  color: #9FB6C0;
+}
+
+.app-nav-user span {
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.app-nav-signout {
+  background: none;
+  border: 1px solid rgba(234, 243, 245, 0.28);
+  color: #EAF3F5;
+  border-radius: 4px;
+  padding: 7px 12px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.app-nav-signout:hover {
+  background: rgba(234, 243, 245, 0.1);
+  border-color: rgba(234, 243, 245, 0.5);
+}
+
+@media (max-width: 720px) {
+  .app-nav {
+    padding: 10px 18px;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .app-nav-user span {
+    display: none;
+  }
+}
+
+.app-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+.app-nav-mark { display: flex; align-items: center; gap: 0.5rem; font-weight: 700; font-size: 1.05rem; color: #1a1a1a; letter-spacing: -0.01em; }
+.app-nav-logo { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 8px; background: linear-gradient(135deg, #f59e0b, #d97706); color: #fff; font-size: 0.8rem; font-weight: 700; }
+.app-nav-links { display: flex; gap: 0.25rem; flex: 1; justify-content: center; }
+.app-nav-links button { border: none; background: transparent; padding: 0.5rem 1rem; border-radius: 8px; font-size: 0.9rem; font-weight: 500; color: #555; cursor: pointer; transition: background 0.15s, color 0.15s; }
+.app-nav-links button:hover { background: #f5f5f5; color: #1a1a1a; }
+.app-nav-links button.active { background: #fef3e2; color: #d97706; font-weight: 600; }
+.app-nav-user { display: flex; align-items: center; gap: 0.6rem; }
+.app-nav-avatar { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; background: #1a1a1a; color: #fff; font-size: 0.8rem; font-weight: 600; flex-shrink: 0; }
+.app-nav-email { font-size: 0.85rem; color: #555; max-width: 160px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.app-nav-signout { border: 1px solid #ddd; background: #fff; padding: 0.4rem 0.8rem; border-radius: 8px; font-size: 0.82rem; cursor: pointer; color: #555; }
+.app-nav-signout:hover { background: #f5f5f5; border-color: #ccc; }
+
+@media (max-width: 640px) {
+  .app-nav { flex-wrap: wrap; gap: 0.75rem; }
+  .app-nav-email { display: none; }
+}

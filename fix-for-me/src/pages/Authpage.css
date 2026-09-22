@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500;700&family=Inter:wght@400;500;600&display=swap');
+
+.auth-screen {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  font-family: 'Inter', system-ui, sans-serif;
+  color: #1B2430;
+}
+
+/* ---------- Left brand panel ---------- */
+.auth-brand {
+  background: #12253E;
+  color: #EAF3F5;
+  padding: 56px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.auth-brand-mark {
+  font-family: 'Roboto Slab', serif;
+  font-weight: 700;
+  font-size: 22px;
+  letter-spacing: 0.01em;
+}
+
+.auth-illustration {
+  width: 100%;
+  max-width: 400px;
+  margin: 24px auto;
+}
+
+.auth-brand-copy h1 {
+  font-family: 'Roboto Slab', serif;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 1.15;
+  margin: 0 0 14px;
+  max-width: 11ch;
+}
+
+.auth-brand-copy p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #B7CCD3;
+  max-width: 34ch;
+  margin: 0;
+}
+
+/* ---------- Right form panel ---------- */
+.auth-panel {
+  background: #F4F3EE;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 380px;
+  background: #FBFAF6;
+  border: 1px solid #E1DFD5;
+  border-radius: 4px;
+  padding: 32px 32px 28px;
+}
+
+.auth-tabs {
+  display: flex;
+  border-bottom: 1px solid #E1DFD5;
+  margin-bottom: 24px;
+}
+
+.auth-tabs button {
+  flex: 1;
+  background: none;
+  border: none;
+  padding: 10px 0 14px;
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #8A8C7F;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.auth-tabs button.active {
+  color: #12253E;
+  border-bottom-color: #E3922B;
+}
+
+.google-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #FFFFFF;
+  border: 1px solid #D5D3C6;
+  border-radius: 4px;
+  padding: 11px 16px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #1B2430;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.google-btn:hover {
+  background: #F6F5F0;
+  border-color: #B9B7A9;
+}
+
+.auth-divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #A6A48F;
+  font-size: 12px;
+  margin: 20px 0;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: #E1DFD5;
+}
+
+.auth-divider span {
+  padding: 0 12px;
+}
+
+form label {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  color: #4B4E44;
+  margin-bottom: 14px;
+}
+
+form input {
+  display: block;
+  width: 100%;
+  margin-top: 6px;
+  padding: 10px 12px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: #1B2430;
+  background: #FFFFFF;
+  border: 1px solid #D5D3C6;
+  border-radius: 4px;
+  box-sizing: border-box;
+  transition: border-color 0.15s ease;
+}
+
+form input:focus {
+  outline: none;
+  border-color: #E3922B;
+  box-shadow: 0 0 0 3px rgba(227, 146, 43, 0.18);
+}
+
+.auth-error {
+  background: #F8E7E1;
+  color: #963F22;
+  font-size: 13px;
+  padding: 10px 12px;
+  border-radius: 4px;
+  margin: 4px 0 16px;
+}
+
+.auth-message {
+  background: #E7EFE4;
+  color: #3E6236;
+  font-size: 13px;
+  padding: 10px 12px;
+  border-radius: 4px;
+  margin: 4px 0 16px;
+}
+
+.submit-btn {
+  width: 100%;
+  background: #E3922B;
+  color: #1B2430;
+  border: none;
+  border-radius: 4px;
+  padding: 12px 16px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 4px;
+  transition: background 0.15s ease;
+}
+
+.submit-btn:hover:not(:disabled) {
+  background: #CE8020;
+}
+
+.submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.auth-switch {
+  text-align: center;
+  font-size: 13px;
+  color: #6B6D5F;
+  margin: 20px 0 0;
+}
+
+.auth-switch button {
+  background: none;
+  border: none;
+  color: #12253E;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 860px) {
+  .auth-screen {
+    grid-template-columns: 1fr;
+  }
+  .auth-brand {
+    padding: 32px 28px;
+  }
+  .auth-illustration {
+    max-width: 280px;
+    margin: 16px auto;
+  }
+  .auth-brand-copy h1 {
+    font-size: 28px;
+  }
+}

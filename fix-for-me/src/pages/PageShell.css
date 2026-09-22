@@ -1,0 +1,13 @@
+.pg { max-width: 960px; margin: 0 auto; padding: 32px 24px 64px; }
+.pg-head { margin-bottom: 24px; }
+.pg-head h1 { margin: 0 0 4px; font-size: 28px; }
+.pg-head p { margin: 0; color: #62646a; }
+.pg-card { padding: 20px; background: #fff; border: 1px solid #e4e5e7; border-radius: 12px; }
+.pg-empty { padding: 48px 16px; text-align: center; color: #62646a; }
+.req-list { display: grid; gap: 12px; margin: 0; padding: 0; list-style: none; }
+.req-item { display: grid; gap: 6px; padding: 16px 20px; background: #fff; border: 1px solid #e4e5e7; border-radius: 12px; }
+.req-item-top { display: flex; align-items: center; gap: 12px; }
+.req-item-top strong { flex: 1; }
+.req-item-meta { font-size: 13px; color: #74767e; }
+.req-item-details { margin: 0; color: #404145; }
+.pg-wide { max-width: 1100px; }
